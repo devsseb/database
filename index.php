@@ -98,7 +98,7 @@ quit($db2->getTotal());
 	quit($q->execute());
 	
 //	$user->save();
-
+*/
 
 } catch (Exception $e) {
 	quit($e);
