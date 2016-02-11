@@ -14,7 +14,12 @@ try {
 	$mysql_user = '';
 	$mysql_password = '';
 
-	$dns_mysql = array('dsn' => 'mysql:dbname=' . $mysql_database . ';charset=utf8', 'user' => $mysql_user, 'password' => $mysql_password);
+	$dns_mysql = array(
+		'dsn' => 'mysql:dbname=' . $mysql_database . ';charset=utf8',
+		'user' => $mysql_user,
+		'password' => $mysql_password,
+		'driver_options' => array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8')
+	);
 	$dns_sqlite = array('dsn' => 'sqlite:db.sqlite', 'driver_options' => array('charset'=> 'UTF-8'));
 
 	$db = new Database($dns_mysql);
